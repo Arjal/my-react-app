@@ -7,11 +7,11 @@ export default function Home() {
 
 
 
-      <nav className='space-x-3'>
+      {/* <nav className='space-x-3'>
         <NavLink to={'/'}>Page1</NavLink>
         <NavLink to={'/page-2'}>Page2</NavLink>
       </nav>
-      <Outlet />
+      <Outlet /> */}
     </div>
   )
 }

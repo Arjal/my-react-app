@@ -9,6 +9,7 @@ import Contact from './pages/contact/Contact';
 import Page1 from './pages/home/nested-pages/Page1';
 import Page2 from './pages/home/nested-pages/Page2';
 import RootLayout from './components/RootLayout';
+import NotFound from './pages/NotFound';
 // import { age, data } from './data';
 // import * as some from './data';
 
@@ -59,18 +60,18 @@ export default function App() {
       element: <RootLayout />,
       children: [
         {
-          path: '/',
+          index: true,
           element: <Home />,
-          children: [
-            {
-              index: true,
-              element: <Page1 />
-            },
-            {
-              path: 'page-2',
-              element: <Page2 />
-            },
-          ]
+          // children: [
+          //   {
+          //     index: true,
+          //     element: <Page1 />
+          //   },
+          //   {
+          //     path: 'page-2',
+          //     element: <Page2 />
+          //   },
+          // ]
         },
         {
           path: 'about',
@@ -81,6 +82,10 @@ export default function App() {
           element: <Contact />
         }
       ]
+    },
+    {
+      path: '*',
+      element: <NotFound />
     }
 
   ]);
