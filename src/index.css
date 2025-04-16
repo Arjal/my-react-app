@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+h2 {
+  font-size: 22px;
+}
+
+@theme {
+  --color-some: red;
+}
+
+/* @config {
+  theme: {
+    extend: {
+      colors: {
+        some: 'red'
+      }
+    }
+  }
+} */
