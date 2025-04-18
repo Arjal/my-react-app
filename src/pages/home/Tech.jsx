@@ -3,7 +3,7 @@ import { DiAndroid, DiAngularSimple, DiGithub, DiJava, DiJavascript, DiPython, D
 
 export default function Tech() {
   return (
-    <div className='grid grid-cols-(--my-grid) justify-items-center'>
+    <div className='grid grid-cols-(--my-grid) justify-items-center '>
       <DiReact className='animate-bounce hover:text-red-600' size={200} />
       <DiPython className='hover:scale-110 ease-in transition duration-100' size={200} />
       <DiJavascript size={200} className='text-some' />
