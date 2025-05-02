@@ -11,7 +11,7 @@ export default function App() {
       element: <RootLayout />,
       children: [
         {
-          path: true,
+          index: true,
           element: <TodoPage />
         }
       ]
