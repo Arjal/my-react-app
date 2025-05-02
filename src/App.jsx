@@ -8,6 +8,8 @@ import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
 import RootLayout from './components/RootLayout';
 import NotFound from './pages/NotFound';
+import CategoryItems from './pages/category_items/CategoryItems';
+import ItemDetail from './pages/item-detail/itemDetail';
 // import { age, data } from './data';
 // import * as some from './data';
 
@@ -70,6 +72,14 @@ export default function App() {
           //     element: <Page2 />
           //   },
           // ]
+        },
+        {
+          path: 'category-items/:label',
+          element: <CategoryItems />
+        },
+        {
+          path: 'item-detail/:id',
+          element: <ItemDetail />
         },
         {
           path: 'about',
