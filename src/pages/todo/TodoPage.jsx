@@ -3,9 +3,9 @@ import TodoAdd from './TodoAdd'
 
 export default function TodoPage() {
   return (
-    <div>
+    <div className='p-5'>
       <TodoAdd />
-      <h1>this is todo page</h1>
+
     </div>
   )
 }

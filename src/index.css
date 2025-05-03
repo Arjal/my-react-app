@@ -52,9 +52,7 @@ h2 {
     @apply cursor-pointer;
   }
 
-  input {
-    @apply border-2 border-gray-500 w-[250px] px-3 py-2;
-  }
+
 }
 
 @layer components {
