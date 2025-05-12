@@ -13,7 +13,7 @@ export default function SignUp() {
   const [userSignUp, { isLoading }] = useUserSignUpMutation();
   const [show, setShow] = useState(false);
   return (
-    <div className='max-w-[400px]'>
+    <div className='max-w-[400px] mt-20 mx-auto'>
 
       <Formik
         initialValues={{
@@ -24,9 +24,9 @@ export default function SignUp() {
         onSubmit={async (val) => {
           try {
             await userSignUp(val).unwrap();
-            toast.success('successfully login')
+            toast.success('successfully registered');
+            nav(-1);
           } catch (err) {
-            console.log(err);
             toast.error(err.data?.message || err.data)
           }
 
