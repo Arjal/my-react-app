@@ -7,6 +7,12 @@ import SignUp from './features/authentication/SignUp';
 import HomePage from './features/home/HomePage';
 import AdminPage from './features/admin/AdminPage';
 import ProductAddForm from './features/admin/ProductAddForm';
+import ProductEdit from './features/admin/ProductEdit';
+import Product from './features/products/Product';
+import CartPage from './features/carts/CartPage';
+import UserProfile from './features/user/UserProfile';
+import ProfileMainPage from './features/user/ProfileMainPage';
+import OrderDetail from './features/orders/OrderDetail';
 
 
 export default function App() {
@@ -30,18 +36,43 @@ export default function App() {
         },
 
         {
-          path: 'signup',
+          path: 'sign-up',
           element: <SignUp />
 
         },
         {
-          path: 'admin-page',
+          path: 'admin/dashboard',
           element: <AdminPage />
 
         },
         {
-          path: 'add-product',
+          path: 'admin/products/add',
           element: <ProductAddForm />
+
+        },
+        {
+          path: 'admin/products/edit/:id',
+          element: <ProductEdit />
+
+        },
+        {
+          path: 'products/:id',
+          element: <Product />
+
+        },
+        {
+          path: 'cart',
+          element: <CartPage />
+
+        },
+        {
+          path: 'user/profile',
+          element: <ProfileMainPage />
+
+        },
+        {
+          path: 'orders/:id',
+          element: <OrderDetail />
 
         },
 

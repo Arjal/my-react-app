@@ -6,7 +6,8 @@ import {
 } from "@material-tailwind/react";
 import ProfileMenu from "./ProfileMenu";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
+
 
 
 export default function Header() {

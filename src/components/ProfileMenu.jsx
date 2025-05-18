@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
   UserCircleIcon,
   ChevronDownIcon,
-  QueueListIcon,
+  DocumentChartBarIcon,
   ShoppingCartIcon,
   PowerIcon,
 } from "@heroicons/react/24/solid";
@@ -20,7 +20,7 @@ const adminMenuItems = [
 
   {
     label: "Admin Dashboard",
-    icon: QueueListIcon,
+    icon: DocumentChartBarIcon,
   },
   {
     label: "Sign Out",
@@ -87,11 +87,18 @@ export default function ProfileMenu({ user }) {
                     dispatch(removeUser());
                     break;
                   case 'Admin Dashboard':
-                    nav('/admin-page');
+                    nav('/admin/dashboard');
+                    break;
+                  case 'Cart':
+                    nav('/cart');
                     break;
 
+                  case 'Profile':
+                    nav('/user/profile');
+                    break;
                 }
                 closeMenu();
+
               }}
               className={`flex items-center gap-2 rounded ${isLastItem
                 ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
