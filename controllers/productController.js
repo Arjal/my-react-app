@@ -1,6 +1,7 @@
 import Product, { categories, brands } from "../models/Product.js";
 import fs from 'fs';
 import mongoose from "mongoose";
+
 export const getTop5 = (req, res, next) => {
   req.query.rating = { $gt: 4.5 };
   req.query.limit = 5;
@@ -53,7 +54,7 @@ export const getProducts = async (req, res) => {
     const skip = (page - 1) * 10;
 
 
-    const products = await query.skip(skip).limit(limit);
+    const products = await query.skip(skip).limit(limit).select('title rating price image');;
     // const products = await query.find({ rating: { gt: 4.5 } }).limit(5);
 
     return res.status(200).json(products);
@@ -63,7 +64,11 @@ export const getProducts = async (req, res) => {
 }
 
 export const getProduct = (req, res) => {
-  return res.status(200).json({ message: 'addProducts' });
+  try {
+    return res.status(200).json(req.product);
+  } catch (err) {
+    return res.status(500).json({ message: `${err}` });
+  }
 }
 
 

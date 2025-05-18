@@ -17,6 +17,6 @@ router.route('/').get(getProducts)
 
 router.route('/top-5').get(getTop5, getProducts).all(notAllowed);
 
-router.route('/:id').get(getProduct).patch(userCheck, adminCheck, checkId, updatefileCheck, updateProduct).delete(userCheck, adminCheck, checkId, removeProduct).all(notAllowed);
+router.route('/:id').get(checkId, getProduct).patch(userCheck, adminCheck, checkId, updatefileCheck, updateProduct).delete(userCheck, adminCheck, checkId, removeProduct).all(notAllowed);
 
 export default router;

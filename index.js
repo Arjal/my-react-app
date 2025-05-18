@@ -13,12 +13,16 @@ import { log } from "console";
 import path from "path";
 import os from "os";
 import fs from "fs";
+import cors from 'cors';
 import express from 'express';
 import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
 import mongoose from "mongoose";
 import morgan from "morgan";
 import fileUpload from "express-fileupload";
+
+
 
 
 const app = express();
@@ -51,6 +55,7 @@ mongoose.connect('mongodb+srv://Arjal:galaxyj2@cluster0.ligj2yv.mongodb.net/test
 //     console.log(err);
 //   })
 // }
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(fileUpload({
@@ -67,6 +72,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/orders', orderRoutes);
 
 // app.get('/', (req, res) => {
 //   return res.status(200).json({
